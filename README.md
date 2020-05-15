@@ -1,4 +1,4 @@
-# Virus smack/strike
+# Virus smack
 
 ## Description
 Survive the Virus is a game where the player has to click quickly on the appearing virus images and avoid hittiing medicine images. The game ends if the player hits medicine image 3 times, misses to hit 4 viruses, or the player clears the game. Game is cleared/won if the player still has at least 1 live. The game difficulty increases(viruses appear faster and/or for shorter time), but the game has a limit and is not a never ending game.
