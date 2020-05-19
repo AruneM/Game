@@ -1,7 +1,7 @@
 # Virus smack
 
 ## Description
-Survive the Virus is a game where the player has to click quickly on the appearing virus images and avoid hittiing medicine images. The game ends if the player hits medicine image 3 times, misses to hit 4 viruses, or the player clears the game. Game is cleared/won if the player still has at least 1 live. The game difficulty increases(viruses appear faster and/or for shorter time), but the game has a limit and is not a never ending game.
+Survive the Virus is a game where the player has to click quickly on the appearing virus images, before all swuares fill up. The game ends if all squares are full or time is up(1min). Game is cleared/won if the player killed all the viruses. The game difficulty increases(viruses appear faster and/or for shorter time), but the game has a limit and is not a never ending game.
 
 ## MVP (DOM - CANVAS)
 1 level; 3 lives; Scores every time hitting the virus; Virus images pop up from 5 holes, which needs to be killed; Avoid killing medicine that pops up; Game over: losing 3 lives; Losing lives: hitting 3 times medicine or not missing to hit 4 viruses. Instruction and controls on the side. Able to restart the game;
@@ -88,4 +88,4 @@ URls for the project repo and deploy
 
 ### Slides
 URls for the project presentation (slides)
-[Link Slides.com](https://docs.google.com/presentation/d/1dL5AXsfgqCh9p8Cbacxw0vaJAvQEJTPtEmuENbr_5Jw/edit?usp=sharing)
+[Link Slides.com](https://docs.google.com/presentation/d/1pOnBN7Y_OhmQIAU25LWVM6cR_oLMidFKhg8r5FTKRLk/edit?usp=sharing)

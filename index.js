@@ -1,12 +1,12 @@
+function start (){
 let canvas = document.getElementById('myCanvas');
 canvas.style.border = "2px solid black";
 // canvas.style.backgroundColor = "#2a3342";
 
 let ctx = canvas.getContext("2d");
 
-let vX = 150;
-let vY = 180;
 let intervalId = 0;
+let intervalId1 = 0;
 let score = 0;
 let background = new Image();
 background.src = "/img/without.png"
@@ -110,39 +110,42 @@ function draw(){
 document.addEventListener('click', (event) => {
     console.log(event);
     if(event.clientY > 133 && event.clientY < 207 && event.clientX > 130 && event.clientX < 188){
-       if (setInterval && event.isTrusted){
-        // ctx.clearRect(120, 120, 66, 80);
+       if (intervalId1 && event.isTrusted){
         drawSpace();
         score ++;
+        // intervalId1 = false;
        }
+    //    if (!intervalId1 && event.isTrusted){
+    //         intervalId1 = setInterval(function(){
+    //         requestAnimationFrame(drawVirus1);
+    //         clearInterval(intervalId1);
+    //     }, 5000);
+    //     intervalId1 = true;
+    //    }
     }
     if(event.clientY > 133 && event.clientY < 207 && event.clientX > 282 && event.clientX < 339){
-        // ctx.clearRect(270, 120, 67, 80);
         drawSpace2();
+        score ++;
     }
     if(event.clientY > 133 && event.clientY < 207 && event.clientX > 432 && event.clientX < 489){
-        // ctx.clearRect(420, 120, 67, 80);
         drawSpace3();
+        score ++;
     }
     if(event.clientY > 281 && event.clientY < 358 && event.clientX > 130 && event.clientX < 188){
-        // ctx.clearRect(120, 270, 66, 80);
         drawSpace4();
+        score ++;
     }
     if(event.clientY > 281 && event.clientY < 358 && event.clientX > 282 && event.clientX < 339){
-        // ctx.clearRect(270, 270, 66, 80);
         drawSpace5();
+        score ++;
     }
     if(event.clientY > 281 && event.clientY < 358 && event.clientX > 432 && event.clientX < 489){
-        // ctx.clearRect(420, 270, 66, 80);
         drawSpace6();
+        score ++;
     }
 });
 
 function interval(){
-
-// intervalId1 = setInterval(function(){
-//     ctx.clearRect(120, 120, 60, 80);
-// }, 7003)
 
 //background
 let intervalId0 = 0;
@@ -150,41 +153,41 @@ intervalId0 = setInterval(function(){
     requestAnimationFrame(draw);
     clearInterval(intervalId0);
 }, 500)
-// //top left
-// let intervalId1 = 0;
+//top left
 // intervalId1 = setInterval(function(){
 //     requestAnimationFrame(drawVirus1);
 //     // clearInterval(intervalId1);
 // }, 3000)
-// // // //top middle
-// intervalId2 = 0;
+// intervalId1 = setInterval(function(){
+//     requestAnimationFrame(drawVirus1);
+//     // clearInterval(intervalId1);
+// }, 3000)
+// //top middle
+// let intervalId2 = 0;
 // intervalId2 = setInterval(function(){
 //     requestAnimationFrame(drawVirus2);
 //     // clearInterval(intervalId2);
 // }, 4000)
-// // // intervalId1 = setInterval(function(){
-// // //     ctx.clearRect(270, 120, 60, 80);
-// // // }, 4000)
-// // // //top right
-// intervalId3 = 0;
+// //top right
+// let intervalId3 = 0;
 // intervalId3 = setInterval(function(){
 //     requestAnimationFrame(drawVirus3);
 //     // clearInterval(intervalId3);
 // }, 7000)
-// // // // //bottom right
-// intervalId4 = 0;
+// //bottom right
+// let intervalId4 = 0;
 // intervalId4 = setInterval(function(){
 //     requestAnimationFrame(drawVirus4);
 //     // clearInterval(intervalId4);
 // }, 5000)
-// // //bottom middle
-// intervalId5 = 0;
+// //bottom middle
+// let intervalId5 = 0;
 // intervalId5 = setInterval(function(){
 //     requestAnimationFrame(drawVirus5);
 //     // clearInterval(intervalId5);
 // }, 13000)
-// // // //bottom left
-// intervalId6 = 0;
+// //bottom left
+// let intervalId6 = 0;
 // intervalId6 = setInterval(function(){
 //     requestAnimationFrame(drawVirus6);
 //     // clearInterval(intervalId6);
@@ -192,3 +195,20 @@ intervalId0 = setInterval(function(){
 
 }
 interval();
+}
+
+// function end(){
+    //if all holes are full
+    //if timer got over 1min.
+    //  //ending
+// let end = 0; 
+// end = setTimeout(function(){
+//     // clearInterval(intervalId6);
+//     // clearInterval(intervalId5);
+//     // clearInterval(intervalId4);
+//     // clearInterval(intervalId3);
+//     // clearInterval(intervalId2);
+//     // clearInterval(intervalId1);
+//     alert("end");
+// }, 100000)
+// }
