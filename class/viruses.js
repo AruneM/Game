@@ -12,6 +12,7 @@ class virus {
         this.ctx.drawImage(
             this.virusimg,
             this.x,
-            this.y)
+            this.y
+        )
     }
 }

@@ -1,15 +1,15 @@
 # Virus smack
 
 ## Description
-Survive the Virus is a game where the player has to click quickly on the appearing virus images, before all swuares fill up. The game ends if all squares are full or time is up(1min). Game is cleared/won if the player killed all the viruses. The game difficulty increases(viruses appear faster and/or for shorter time), but the game has a limit and is not a never ending game.
+Survive the Virus is a game where the player has to click quickly on the appearing virus images, before all squares fills up. The game ends if all squares are full or time is up(2min). Game is cleared/won if the player killed all the viruses.
 
 ## MVP (DOM - CANVAS)
-1 level; 3 lives; Scores every time hitting the virus; Virus images pop up from 5 holes, which needs to be killed; Avoid killing medicine that pops up; Game over: losing 3 lives; Losing lives: hitting 3 times medicine or not missing to hit 4 viruses. Instruction and controls on the side. Able to restart the game;
+1 level; 3 lives; Scores every time hitting the virus; Virus images pop up from 6 holes, which needs to be killed; Avoid killing medicine that pops up; Game over: all 6 holes are full; Losing lives: hitting 3 times green virus; Instruction at the begining. Able to restart the game;
 
 ## Backlog
 Increase level difficulty.
-Make an instruction button.
-Make a spray instead hammer kill the virus.
+Make green virus;
+
 
 ## Data structure
 ### main()
@@ -20,8 +20,6 @@ endGame()
 ### game()
 drawCanvas()
 addVirus()
-addMedice()
-addHammer()
 addEvents()
 updateCanvas()
 clearCanvas()
@@ -32,19 +30,8 @@ move()
 loop()
 interval()
 
-### medicine()
-draw()
-move()
-loop()
-interval()
-
-### hammer()
-draw()
-move()
-
 ### event()
 mouseClick()
-moveHammer()
 
 ## States y States Transitions
 - splashScreen(a simple screen with an image and with start button)
@@ -63,19 +50,17 @@ event;
 ### Game:
 update canvas;
 import images;
-### Virus and Medicine
+### Virus
 create image;
 import images;
 add ivents;
-### Hammer:
-create image;
-import image;
-add ivents;
 ### Extra:
-add instructions on the side;
 music;
 extra buttons;
 style;
+extra virus;
+lives;
+score;
 
 ## Links
 ### Trello
