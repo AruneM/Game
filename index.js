@@ -7,9 +7,9 @@ function start() {
 
   let score = 0;
   let background = new Image();
-  background.src = "/img/without.png";
+  background.src = "./img/without.png";
   let virusimg = new Image();
-  virusimg.src = "/img/red.png";
+  virusimg.src = "./img/red.png";
 
   function drawbackground() {
     ctx.drawImage(background, 0, 0);
