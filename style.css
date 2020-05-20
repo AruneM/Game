@@ -1,6 +1,6 @@
 
 .container {
-    background-image: url("img/without.png");
+    background-image: url("./img/without.png");
     background-repeat: no-repeat;
     background-position: center;
     background-size: contain;
