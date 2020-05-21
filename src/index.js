@@ -159,6 +159,7 @@ function start() {
           lives --;
           greenV5 = false;
           score--;
+          console.log(lives);
         }
       }
       if (
@@ -174,6 +175,7 @@ function start() {
           lives --;
           greenV6 = false;
           score--;
+          console.log(lives);
         }
       }
       if (
@@ -259,11 +261,13 @@ function start() {
     intervalId1 = setInterval(function () {
       requestAnimationFrame(drawVirus1);
       virus1 = true;
+      greenV5 = false;
     }, 3000);
     //top middle
     intervalId2 = setInterval(function () {
       requestAnimationFrame(drawVirus2);
       virus2 = true;
+      greenV6 = false;
     }, 4000);
     //top right
     intervalId3 = setInterval(function () {
