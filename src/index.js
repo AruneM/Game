@@ -113,6 +113,12 @@ function start() {
   function drawgreenV4() {
     ctx.drawImage(greenVirus, 120, 280);
   }
+  function drawgreenV5() {
+    ctx.drawImage(greenVirus, 120, 120);
+  }
+  function drawgreenV6() {
+    ctx.drawImage(greenVirus, 270, 120);
+  }
 
 //function to draw every not changing object
   function draw() {
@@ -133,6 +139,8 @@ function start() {
   let greenV2 = false;
   let greenV3 = false;
   let greenV4 = false;
+  let greenV5 = false;
+  let greenV6 = false;
 
   //checking if you click in the right place and if yes add a space to hide the virus
   document.addEventListener(
@@ -147,6 +155,11 @@ function start() {
         drawSpace();
         score++;
         virus1 = false;
+        if (greenV5){
+          lives --;
+          greenV5 = false;
+          score--;
+        }
       }
       if (
         event.clientY > 133 &&
@@ -157,6 +170,11 @@ function start() {
         drawSpace2();
         score++;
         virus2 = false;
+        if (greenV6){
+          lives --;
+          greenV6 = false;
+          score--;
+        }
       }
       if (
         event.clientY > 133 &&
@@ -273,30 +291,44 @@ function start() {
     }, 9000);
 
     //good viruses
-    //same spot as virus5
+    //same spot as virus5 every 13000
     let greenVirus1 = setTimeout(function () {
       requestAnimationFrame(drawgreenV1);
       clearTimeout(greenVirus1);
       greenV1 = true;
-    }, 9000);
-    //same spot as virus3
+    }, 61000);
+    //same spot as virus3 every 7000
     let greenVirus2 = setTimeout(function () {
       requestAnimationFrame(drawgreenV2);
       clearTimeout(greenVirus2);
       greenV2 = true;
-    }, 17000);
-    //same spot as virus6
+    }, 45000);
+    //same spot as virus6 every 9000
     let greenVirus3 = setTimeout(function () {
       requestAnimationFrame(drawgreenV3);
       clearTimeout(greenVirus3);
       greenV3 = true;
-    }, 13000);
-    //same spot as virus4
+    }, 23000);
+    //same spot as virus4 every 5000
     let greenVirus4 = setTimeout(function () {
       requestAnimationFrame(drawgreenV4);
       clearTimeout(greenVirus4);
       greenV4 = true;
-    }, 1500);
+    }, 82000);
+
+
+    //same spot as virus4 every 3000
+    let greenVirus5 = setTimeout(function () {
+    requestAnimationFrame(drawgreenV5);
+    clearTimeout(greenVirus5);
+    greenV5 = true;
+    }, 73000);
+    //same spot as virus4 every 4000
+    let greenVirus6 = setTimeout(function () {
+    requestAnimationFrame(drawgreenV6);
+    clearTimeout(greenVirus6);
+    greenV6 = true;
+    }, 94000);
   }
   interval();
 
