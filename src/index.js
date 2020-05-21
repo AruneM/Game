@@ -238,39 +238,39 @@ function start() {
       clearTimeout(intervalId0);
     }, 50);
     //top left
-    // intervalId1 = setInterval(function () {
-    //   requestAnimationFrame(drawVirus1);
-    //   virus1 = true;
-    // }, 3000);
-    // //top middle
-    // intervalId2 = setInterval(function () {
-    //   requestAnimationFrame(drawVirus2);
-    //   virus2 = true;
-    // }, 4000);
-    // //top right
-    // intervalId3 = setInterval(function () {
-    //   requestAnimationFrame(drawVirus3);
-    //   virus3 = true;
-    //   greenV2 = false;
-    // }, 7000);
-    // //bottom right
-    // intervalId4 = setInterval(function () {
-    //   requestAnimationFrame(drawVirus4);
-    //   virus4 = true;
-    //   greenV4 = false;
-    // }, 5000);
-    // //bottom middle
-    // intervalId5 = setInterval(function () {
-    //   requestAnimationFrame(drawVirus5);
-    //   virus5 = true;
-    //   greenV1 = false;
-    // }, 13000);
-    // //bottom left
-    // intervalId6 = setInterval(function () {
-    //   requestAnimationFrame(drawVirus6);
-    //   virus6 = true;
-    //   greenV3 = false;
-    // }, 9000);
+    intervalId1 = setInterval(function () {
+      requestAnimationFrame(drawVirus1);
+      virus1 = true;
+    }, 3000);
+    //top middle
+    intervalId2 = setInterval(function () {
+      requestAnimationFrame(drawVirus2);
+      virus2 = true;
+    }, 4000);
+    //top right
+    intervalId3 = setInterval(function () {
+      requestAnimationFrame(drawVirus3);
+      virus3 = true;
+      greenV2 = false;
+    }, 7000);
+    //bottom right
+    intervalId4 = setInterval(function () {
+      requestAnimationFrame(drawVirus4);
+      virus4 = true;
+      greenV4 = false;
+    }, 5000);
+    //bottom middle
+    intervalId5 = setInterval(function () {
+      requestAnimationFrame(drawVirus5);
+      virus5 = true;
+      greenV1 = false;
+    }, 13000);
+    //bottom left
+    intervalId6 = setInterval(function () {
+      requestAnimationFrame(drawVirus6);
+      virus6 = true;
+      greenV3 = false;
+    }, 9000);
 
     //good viruses
     //same spot as virus5
@@ -356,7 +356,6 @@ function start() {
 
   //to end the game if all holes are full or lives = 0
   function over() {
-    lives = 0;
     music.pause();
     music.currentTime = 0;
     //SETTING GAME-OVER SCREEN
@@ -373,7 +372,7 @@ function start() {
               <h2>Your score is ${score}</h2></h2>
             </div>
             <div id="lives">
-            <h2>${lives} lives left</h2>
+            <h2>0 lives left</h2>
             </div>
             <div>
             <button id="restart-btn" class="button" >RESTART</button>
