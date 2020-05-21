@@ -159,7 +159,6 @@ function start() {
           lives --;
           greenV5 = false;
           score--;
-          console.log(lives);
         }
       }
       if (
@@ -175,7 +174,6 @@ function start() {
           lives --;
           greenV6 = false;
           score--;
-          console.log(lives);
         }
       }
       if (
@@ -319,8 +317,6 @@ function start() {
       clearTimeout(greenVirus4);
       greenV4 = true;
     }, 82000);
-
-
     //same spot as virus4 every 3000
     let greenVirus5 = setTimeout(function () {
     requestAnimationFrame(drawgreenV5);
@@ -387,7 +383,7 @@ function start() {
     }
     removeGameScreen();
     createGameOverScreen();
-  }, 100000);
+  }, 50000);
 
 
   //to end the game if all holes are full or lives = 0
