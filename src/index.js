@@ -6,11 +6,15 @@ function start() {
   let ctx = canvas.getContext("2d");
 
   let score = 0;
+  let lives = 3;
   let background = new Image();
   background.src = "./img/without.png";
   let virusimg = new Image();
   virusimg.src = "./img/red.png";
+  let greenVirus = new Image();
+  greenVirus.src = "./img/greenV.png"
 
+  //DRAWING
   function drawbackground() {
     ctx.drawImage(background, 0, 0);
   }
@@ -76,7 +80,7 @@ function start() {
     ctx.fillStyle = "#6d2827";
     ctx.fillRect(420, 280, 66, 80);
   }
-
+//bad viruses
   function drawVirus1() {
     ctx.drawImage(virusimg, 120, 120);
   }
@@ -95,22 +99,45 @@ function start() {
   function drawVirus6() {
     ctx.drawImage(virusimg, 420, 280);
   }
-  function drawgreenV() {}
+  
+  //good viruses(green)
+  function drawgreenV1() {
+    ctx.drawImage(greenVirus, 270, 280);
+  }
+  function drawgreenV2() {
+    ctx.drawImage(greenVirus, 420, 120);
+  }
+  function drawgreenV3() {
+    ctx.drawImage(greenVirus, 420, 280);
+  }
+  function drawgreenV4() {
+    ctx.drawImage(greenVirus, 120, 280);
+  }
+
+//function to draw every not changing object
   function draw() {
     drawbackground();
     drawHoles();
   }
+
+
+  //EVENT CLICKER
+  //creating objects for viruses
   let virus1 = false;
   let virus2 = false;
   let virus3 = false;
   let virus4 = false;
   let virus5 = false;
   let virus6 = false;
+  let greenV1 = false;
+  let greenV2 = false;
+  let greenV3 = false;
+  let greenV4 = false;
 
+  //checking if you click in the right place and if yes add a space to hide the virus
   document.addEventListener(
     "click",
     (event) => {
-      console.log(event);
       if (
         event.clientY > 133 &&
         event.clientY < 207 &&
@@ -120,7 +147,6 @@ function start() {
         drawSpace();
         score++;
         virus1 = false;
-        console.log(virus1);
       }
       if (
         event.clientY > 133 &&
@@ -141,6 +167,11 @@ function start() {
         drawSpace3();
         score++;
         virus3 = false;
+        if (greenV2){
+          lives --;
+          greenV2 = false;
+          score--;
+        }
       }
       if (
         event.clientY > 281 &&
@@ -151,6 +182,11 @@ function start() {
         drawSpace4();
         score++;
         virus4 = false;
+        if (greenV4){
+          lives --;
+          greenV4 = false;
+          score--;
+        }
       }
       if (
         event.clientY > 281 &&
@@ -161,6 +197,11 @@ function start() {
         drawSpace5();
         score++;
         virus5 = false;
+        if (greenV1){
+          lives --;
+          greenV1 = false;
+          score--;
+        }
       }
       if (
         event.clientY > 281 &&
@@ -171,10 +212,18 @@ function start() {
         drawSpace6();
         score++;
         virus6 = false;
+        if (greenV3){
+          lives --;
+          greenV3 = false;
+          score--;
+        }
       }
     },
     50
   );
+
+  //INTERVALS
+  //intervals to show viruses
   let intervalId1 = 0;
   let intervalId2 = 0;
   let intervalId3 = 0;
@@ -184,50 +233,80 @@ function start() {
 
   function interval() {
     //background
-    let intervalId0 = setInterval(function () {
+    let intervalId0 = setTimeout(function () {
       requestAnimationFrame(draw);
-      clearInterval(intervalId0);
+      clearTimeout(intervalId0);
     }, 50);
     //top left
-    intervalId1 = setInterval(function () {
-      requestAnimationFrame(drawVirus1);
-      virus1 = true;
-      console.log(virus1);
-      // clearInterval(intervalId1);
-    }, 3000);
-    //top middle
-    intervalId2 = setInterval(function () {
-      requestAnimationFrame(drawVirus2);
-      // clearInterval(intervalId2);
-      virus2 = true;
-    }, 4000);
-    //top right
-    intervalId3 = setInterval(function () {
-      requestAnimationFrame(drawVirus3);
-      // clearInterval(intervalId3);
-      virus3 = true;
-    }, 7000);
-    //bottom right
-    intervalId4 = setInterval(function () {
-      requestAnimationFrame(drawVirus4);
-      // clearInterval(intervalId4);
-      virus4 = true;
-    }, 5000);
-    //bottom middle
-    intervalId5 = setInterval(function () {
-      requestAnimationFrame(drawVirus5);
-      // clearInterval(intervalId5);
-      virus5 = true;
-    }, 13000);
-    //bottom left
-    intervalId6 = setInterval(function () {
-      requestAnimationFrame(drawVirus6);
-      // clearInterval(intervalId6);
-      virus6 = true;
+    // intervalId1 = setInterval(function () {
+    //   requestAnimationFrame(drawVirus1);
+    //   virus1 = true;
+    // }, 3000);
+    // //top middle
+    // intervalId2 = setInterval(function () {
+    //   requestAnimationFrame(drawVirus2);
+    //   virus2 = true;
+    // }, 4000);
+    // //top right
+    // intervalId3 = setInterval(function () {
+    //   requestAnimationFrame(drawVirus3);
+    //   virus3 = true;
+    //   greenV2 = false;
+    // }, 7000);
+    // //bottom right
+    // intervalId4 = setInterval(function () {
+    //   requestAnimationFrame(drawVirus4);
+    //   virus4 = true;
+    //   greenV4 = false;
+    // }, 5000);
+    // //bottom middle
+    // intervalId5 = setInterval(function () {
+    //   requestAnimationFrame(drawVirus5);
+    //   virus5 = true;
+    //   greenV1 = false;
+    // }, 13000);
+    // //bottom left
+    // intervalId6 = setInterval(function () {
+    //   requestAnimationFrame(drawVirus6);
+    //   virus6 = true;
+    //   greenV3 = false;
+    // }, 9000);
+
+    //good viruses
+    //same spot as virus5
+    let greenVirus1 = setTimeout(function () {
+      requestAnimationFrame(drawgreenV1);
+      clearTimeout(greenVirus1);
+      greenV1 = true;
     }, 9000);
+    //same spot as virus3
+    let greenVirus2 = setTimeout(function () {
+      requestAnimationFrame(drawgreenV2);
+      clearTimeout(greenVirus2);
+      greenV2 = true;
+    }, 17000);
+    //same spot as virus6
+    let greenVirus3 = setTimeout(function () {
+      requestAnimationFrame(drawgreenV3);
+      clearTimeout(greenVirus3);
+      greenV3 = true;
+    }, 13000);
+    //same spot as virus4
+    let greenVirus4 = setTimeout(function () {
+      requestAnimationFrame(drawgreenV4);
+      clearTimeout(greenVirus4);
+      greenV4 = true;
+    }, 1500);
   }
   interval();
 
+  let music = new Audio ("./audio/GameMusic.mp3");
+  music.volume = 0.2;
+  music.play();
+
+
+//END
+//to end the game after 1min
   let ending = setTimeout(function () {
     clearInterval(intervalId6);
     clearInterval(intervalId5);
@@ -236,6 +315,8 @@ function start() {
     clearInterval(intervalId2);
     clearInterval(intervalId1);
     clearInterval(intervalId7);
+    music.pause();
+    music.currentTime = 0;
 
     //SETTING GAME-OVER SCREEN
     function createGameOverScreen() {
@@ -246,6 +327,12 @@ function start() {
         <div class="container">
             <div>
                 <h1>You won!!!</h1>
+            </div>
+            <div id="score">
+            <h2>Your score is ${score}</h2>
+            </div>
+            <div id="lives">
+            <h2>${lives} lives left</h2>
             </div>
             <div>
             <button id="restart-btn" class="button" >RESTART</button>
@@ -264,9 +351,14 @@ function start() {
     }
     removeGameScreen();
     createGameOverScreen();
-  }, 20000);
+  }, 100000);
 
+
+  //to end the game if all holes are full or lives = 0
   function over() {
+    lives = 0;
+    music.pause();
+    music.currentTime = 0;
     //SETTING GAME-OVER SCREEN
     function createGameOverScreen() {
       gameScreen.remove();
@@ -275,7 +367,13 @@ function start() {
         <main>
         <div class="container">
             <div>
-                <h1>You lost!!!</h1>
+                <h1>You died from virus!!!</h1>
+            </div>
+            <div id="score">
+              <h2>Your score is ${score}</h2></h2>
+            </div>
+            <div id="lives">
+            <h2>${lives} lives left</h2>
             </div>
             <div>
             <button id="restart-btn" class="button" >RESTART</button>
@@ -315,8 +413,22 @@ function start() {
       clearTimeout(ending);
       over();
     }
+    if (lives == 0)
+    {
+      clearInterval(intervalId7);
+      clearInterval(intervalId6);
+      clearInterval(intervalId5);
+      clearInterval(intervalId4);
+      clearInterval(intervalId3);
+      clearInterval(intervalId2);
+      clearInterval(intervalId1);
+      clearTimeout(ending);
+      over();
+    }
   }, 1000);
 }
+
+
 
 // let viruses = [{x: 120, y: 120, appears: false}, {x:270, y:120, appears: false},
 // {x:420, y:120, appears: false}, {x:120, y:280, appears: false}, {x:270, y:280, appears: false},

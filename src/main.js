@@ -20,7 +20,7 @@ function buildDom(htmlString) {
             <div id="instructions-box">
               <h2>Instructions!</h2>
               <p>
-              Kill the viruses by clicking on them, before all the squares fill up.
+              Kill viruses by clicking on them, before all the squares fill up(you die instantly). And avoid green viruses, you have 3 lives for that!
                 </p>
             </div>
             <div class="input-container">

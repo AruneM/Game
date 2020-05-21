@@ -34,3 +34,12 @@
     font-weight: bold;
     border-color: #f4a785;
 }
+
+#lives h2 {
+    margin: 0;
+    font-size: 22px;
+}
+#score h2 {
+    margin: 0;
+    font-size: 22px;
+}
