@@ -382,7 +382,7 @@ function start() {
     }
     removeGameScreen();
     createGameOverScreen();
-  }, 50000);
+  }, 100000);
 
 
   //to end the game if all holes are full or lives = 0
