@@ -126,7 +126,6 @@ function start() {
     drawHoles();
   }
 
-
   //EVENT CLICKER
   //creating objects for viruses
   let virus1 = false;
@@ -458,38 +457,3 @@ function start() {
     }
   }, 1000);
 }
-
-
-
-// let viruses = [{x: 120, y: 120, appears: false}, {x:270, y:120, appears: false},
-// {x:420, y:120, appears: false}, {x:120, y:280, appears: false}, {x:270, y:280, appears: false},
-// {x:420, y:280, appears: false}]
-
-// let intervalId0 = 0;
-// intervalId0 = setInterval(function(){
-
-//update state
-
-// //clear canvas
-// clearRect(0, 0, 598, 498);
-
-// //draw background
-//draw();
-
-// for each array virus(draw){
-//if (virus[].appears == false){
-// if appears is false ( 50% of being true)
-//}
-//}
-
-//draw elements only if they are true
-//if (virus[].appears == true){
-//ctx.drawImage(virusimg, virus[].x, virus[].y);
-//}
-
-// check gameover => if all appears === true with a foreach
-
-//     draw random virus
-// }, 500)
-
-//addeventlistener => when click, change virus to false

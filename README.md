@@ -1,15 +1,14 @@
 # Virus smack
 
 ## Description
-Survive the Virus is a game where the player has to click quickly on the appearing virus images, before all squares fills up. The game ends if all squares are full or time is up(2min). Game is cleared/won if the player killed all the viruses.
+Survive the Virus is a game where the player has to click quickly on the appearing virus images, before all squares fills up. The game ends if all squares are full or time is up(1min). Game is cleared/won if the player survives all 3 levels.
 
 ## MVP (DOM - CANVAS)
-1 level; 3 lives; Scores every time hitting the virus; Virus images pop up from 6 holes, which needs to be killed; Avoid killing medicine that pops up; Game over: all 6 holes are full; Losing lives: hitting 3 times green virus; Instruction at the begining. Able to restart the game;
+3 levels; 3 lives; Scores every time hitting the virus; Virus images pop up from 6 holes, which needs to be killed; Avoid killing green virus; Game over: all 6 holes are full; Losing lives: hitting 3 times green virus; Instruction at the begining. Able to restart the game; Background music;
 
 ## Backlog
 Increase level difficulty.
 Make green virus;
-
 
 ## Data structure
 ### main()
@@ -20,6 +19,7 @@ endGame()
 ### game()
 drawCanvas()
 addVirus()
+addGreenVirus()
 addEvents()
 updateCanvas()
 clearCanvas()
@@ -27,17 +27,17 @@ clearCanvas()
 ### viruses()
 draw()
 move()
-loop()
+click()
 interval()
 
 ### event()
 mouseClick()
 
 ## States y States Transitions
-- splashScreen(a simple screen with an image and with start button)
-- gameScreen (a table with 5 or 4 holes and a hammer on the right bottom corner)
-- gameoverScreen (same as splashScreen just with GAME OVER text)
-- winScreen (same as splashScreen just with icon of clapping hands and WIN text or just win text on the game screen)
+- splashScreen(a simple screen with an image and start button)
+- gameScreen (6 holes and appearing viruses in them)
+- gameoverScreen (score; lives that are left and GAME OVER text, restart button)
+- winScreen (same as gameover screen just with WIN text)
 
 ## Task
 ### Try out:
@@ -53,7 +53,7 @@ import images;
 ### Virus
 create image;
 import images;
-add ivents;
+add events;
 ### Extra:
 music;
 extra buttons;
